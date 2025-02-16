@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
             required: true
         },
         coverImage: {
-            type: string,
+            type: String,
 
         },
         watchHistory: [
@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Password is requried'],
         },
-        refresToken: {
+        refreshToken: {
             type: String
         }
     },

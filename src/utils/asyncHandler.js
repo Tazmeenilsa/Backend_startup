@@ -1,6 +1,6 @@
 const asyncHandler = (requestHandler) => {
     // next is use for handle middlewares
-    (req, res, next) => { //wrapper function
+   return (req, res, next) => { //wrapper function
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
     }
 }
