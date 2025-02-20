@@ -54,7 +54,10 @@ const userSchema = new mongoose.Schema(
 userSchema.pre("save", async function (next) {
     if (!this.isModified('password')) return next()
     //bycrypt helps you to hash your password
+    console.log('pass', this.password)
     this.password = bcrypt.hash(this.password, 10)
+    console.log('password', this.password)
+
     next()
 })
 userSchema.methods.isPasswordCorrect = async function (password) {
